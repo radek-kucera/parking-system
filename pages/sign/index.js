@@ -7,7 +7,6 @@ const Sign = () => {
     <div>
       <Head>
         <title>Sign in | park.it</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>

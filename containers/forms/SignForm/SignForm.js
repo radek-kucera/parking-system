@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
 import setAuth from '../../../actions/authActions';
+import { useRouter } from 'next/router';
 import useUser from '../../../hooks/useUser';
 
 const SignForm = () => {
@@ -14,7 +15,8 @@ const SignForm = () => {
   const [isBusy, setBusy] = useState(false);
   const [isError, setError] = useState(false);
   const dispatch = useDispatch();
-  const { tokens } = useUser();
+  const router = useRouter();
+  const { user } = useUser();
 
   const onSubmit = async (form) => {
     try {
@@ -37,6 +39,10 @@ const SignForm = () => {
       setBusy(false);
     }
   };
+
+  useEffect(() => {
+    if (user) router.push('/app');
+  }, [user]);
 
   return (
     <section className={cls['sign-form']}>

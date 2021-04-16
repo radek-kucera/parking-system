@@ -7,6 +7,7 @@ export const authReducer = (state, action) => {
 
   if (action.type === TYPES.AUTH_SET) {
     localStorage.setItem('auth', JSON.stringify(action.payload));
+
     return { ...action.payload };
   } else {
     return state;
