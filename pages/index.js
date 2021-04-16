@@ -13,7 +13,7 @@ const Home = () => {
 
       <main>
         <Link href="/sign">
-          <button>Get started</button>
+          <button>Get started BUM</button>
         </Link>
       </main>
     </div>
