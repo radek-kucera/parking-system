@@ -7,16 +7,12 @@ import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
 import setAuth from '../../../actions/authActions';
-import { useRouter } from 'next/router';
-import useUser from '../../../hooks/useUser';
 
 const SignForm = () => {
   const { register, handleSubmit } = useForm();
   const [isBusy, setBusy] = useState(false);
   const [isError, setError] = useState(false);
   const dispatch = useDispatch();
-  const router = useRouter();
-  const { user } = useUser();
 
   const onSubmit = async (form) => {
     try {
@@ -39,10 +35,6 @@ const SignForm = () => {
       setBusy(false);
     }
   };
-
-  useEffect(() => {
-    if (user) router.push('/app');
-  }, [user]);
 
   return (
     <section className={cls['sign-form']}>
