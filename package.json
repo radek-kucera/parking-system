@@ -13,6 +13,8 @@
     "react": "17.x",
     "react-dom": "17.x",
     "react-hook-form": "^7.1.1",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5",
     "sass": "^1.32.8"
   },
   "prettier": {

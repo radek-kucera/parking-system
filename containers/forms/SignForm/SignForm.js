@@ -1,15 +1,20 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Button from '../../../components/Button/Button';
 import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
-import { useState } from 'react';
+import setAuth from '../../../actions/authActions';
+import useUser from '../../../hooks/useUser';
 
 const SignForm = () => {
   const { register, handleSubmit } = useForm();
   const [isBusy, setBusy] = useState(false);
   const [isError, setError] = useState(false);
+  const dispatch = useDispatch();
+  const { tokens } = useUser();
 
   const onSubmit = async (form) => {
     try {
@@ -24,8 +29,9 @@ const SignForm = () => {
 
       const { success, ...tokens } = data;
 
-      console.log(tokens);
+      dispatch(setAuth(tokens));
     } catch (err) {
+      console.error(err);
       setError('Unexpected error!');
     } finally {
       setBusy(false);
