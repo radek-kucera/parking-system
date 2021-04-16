@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import AuthProvider from '../../containers/providers/AuthProvider/AuthProvider';
 import ReservationPopup from '../../components/ReservationPopup/ReservationPopup';
-import useEvent from '../../hooks/useEvent';
+import useParkingSpots from '../../hooks/useParkingSpots';
 
 const App = () => {
-  const { create, remove, update, getUpcomingEvents } = useEvent();
+  const { parkingSpots } = useParkingSpots();
 
   return (
     <div>
@@ -15,7 +15,7 @@ const App = () => {
       <AuthProvider>
         <main>
           <h1>Appka lol :)</h1>
-          <button
+          {/* <button
             onClick={() =>
               update({
                 winstrom: {
@@ -32,9 +32,9 @@ const App = () => {
                 }
               })
             }
-          />
+          /> */}
           <br />
-          <button onClick={getUpcomingEvents} />
+          <button onClick={console.log(parkingSpots)} />
         </main>
       </AuthProvider>
     </div>
