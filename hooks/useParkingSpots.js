@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react';
-import { URL_PARKING_SPOTS } from '../dotenv';
+import { URL_PARKING_SPOTS, URL_SENSORS } from '../dotenv';
 import useSWR from 'swr';
-import { authorizedGet } from '../services/requestHelpers';
+import { authorizedGet, unauthorizedGet } from '../services/requestHelpers';
 
 const useParkingSpots = () => {
   const parkings = useSWR(URL_PARKING_SPOTS, authorizedGet);
+  const sensors = useSWR(URL_SENSORS, authorizedGet);
 
   return {
-    isError: !!parkings.error,
+    isErrorParkings: !!parkings.error,
+    isErrorSensors: !!sensors.error,
     parkingSpots: parkings.data ? parkings.data.data.winstrom.zakazka : null,
-    revalidate: parkings.revalidate
+    sensorsData: sensors.data ? sensors.data.data : null,
+    revalidateParkings: parkings.revalidate,
+    revalidateSensors: sensors.revalidate
   };
 };
 
