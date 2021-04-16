@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import Button from '../../../components/Button/Button';
+import WideButton from '../../../components/WideButton/WideButton';
 import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
@@ -40,15 +40,16 @@ const SignForm = () => {
 
   return (
     <section className={cls['sign-form']}>
+      <img src="/logo.svg" width="60%"></img>
       <h1>Sign in</h1>
 
       <form className={cls['sign-form-container']} onSubmit={handleSubmit(onSubmit)}>
         <Input placeholder="Username" name="username" register={register} />
         <Input placeholder="Password" name="password" type="password" register={register} />
-        <p>{isError || ''}</p>
-        <Button type="submit" isBusy={isBusy}>
+        <p className={cls['error']}>{isError || ''}</p>
+        <WideButton type="submit" isBusy={isBusy}>
           Sign in
-        </Button>
+        </WideButton>
       </form>
     </section>
   );
