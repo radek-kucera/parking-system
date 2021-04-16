@@ -2,7 +2,7 @@ import '../styles/globals.scss';
 import { Provider } from 'react-redux';
 import useStore from '../hooks/useStore';
 
-const App = ({ Component, pageProps }) => {
+const AppWrapper = ({ Component, pageProps }) => {
   const store = useStore();
 
   return (
@@ -12,4 +12,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default App;
+export default AppWrapper;

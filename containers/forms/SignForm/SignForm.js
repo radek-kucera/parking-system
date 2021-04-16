@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -7,14 +7,12 @@ import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
 import setAuth from '../../../actions/authActions';
-import useUser from '../../../hooks/useUser';
 
 const SignForm = () => {
   const { register, handleSubmit } = useForm();
   const [isBusy, setBusy] = useState(false);
   const [isError, setError] = useState(false);
   const dispatch = useDispatch();
-  const { tokens } = useUser();
 
   const onSubmit = async (form) => {
     try {
