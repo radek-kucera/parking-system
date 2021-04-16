@@ -1,5 +1,29 @@
-.button {
-  // TODO some styling here
-  font-weight: bold;
-  text-transform: uppercase;
+@import '../../styles/variables';
+.card {
+  background-color: $light;
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+  height: 370px;
+}
+.wrapper {
+  position: relative;
+  padding: 0px 0px 82px 0px;
+  text-align: center;
+  .button {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 50%;
+  }
+}
+
+.heading {
+  text-align: center;
+  margin-top: 64px;
+  @include font-title;
 }
