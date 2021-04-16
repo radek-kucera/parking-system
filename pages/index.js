@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import TopBar from '../layouts/TopBar/TopBar';
 
 // ZDE BUDE LENDING PAGE
 
@@ -11,11 +12,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Link href="/sign">
-          <button>Get started BUM</button>
-        </Link>
-      </main>
+      <TopBar />
+
+      <main></main>
     </div>
   );
 };
