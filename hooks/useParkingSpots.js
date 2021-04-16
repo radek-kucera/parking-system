@@ -5,7 +5,7 @@ import { authorizedGet, unauthorizedGet } from '../services/requestHelpers';
 
 const useParkingSpots = () => {
   const parkings = useSWR(URL_PARKING_SPOTS, authorizedGet);
-  const sensors = useSWR(URL_SENSORS, authorizedGet);
+  const sensors = useSWR(URL_SENSORS, unauthorizedGet);
 
   return {
     isErrorParkings: !!parkings.error,
