@@ -1,8 +1,6 @@
 @import '../../styles/variables';
 
 .button {
-  // TODO some styling here
-
   @include font-title;
   font-size: 18px;
   background-color: $main;
@@ -14,6 +12,8 @@
   text-decoration: none;
   display: inline-block;
   transition: all 250ms ease;
+  cursor: pointer;
+
   &:hover {
     background-color: darken($main, 10%);
   }

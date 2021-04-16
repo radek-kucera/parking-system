@@ -19,10 +19,6 @@ const useUser = () => {
   }, []);
 
   useEffect(() => {
-    if (error && tokens) dispatch(setAuth(null));
-  }, [error]);
-
-  useEffect(() => {
     if (tokens) revalidate();
   }, [tokens]);
 

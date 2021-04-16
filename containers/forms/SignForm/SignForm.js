@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import WideButton from '../../../components/WideButton/WideButton';
+import Button from '../../../components/Button/Button';
 import Input from '../../../components/Input/Input';
 import cls from './SignForm.module.scss';
 import { URL_SIGN } from '../../../dotenv';
@@ -45,9 +45,9 @@ const SignForm = () => {
         <Input placeholder="Username" name="username" register={register} />
         <Input placeholder="Password" name="password" type="password" register={register} />
         <p className={cls['error']}>{isError || ''}</p>
-        <WideButton type="submit" isBusy={isBusy}>
+        <Button type="submit" isBusy={isBusy}>
           Sign in
-        </WideButton>
+        </Button>
       </form>
     </section>
   );

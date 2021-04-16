@@ -10,7 +10,11 @@ const AuthProvider = ({ children }) => {
     if (isError) router.push('/sign');
   }, [isError]);
 
-  if (user) return <>{children}</>;
+  if (user) {
+    console.log(user);
+
+    return <>{children}</>;
+  }
 
   return <></>;
 };
