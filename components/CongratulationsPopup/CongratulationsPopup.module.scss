@@ -5,14 +5,23 @@
   border-radius: 15px;
   padding: 16px 32px 32px 32px;
   @include font-type;
+  p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  span {
+    font-size: 16px;
+  }
 }
 .modal > .header {
   width: 100%;
   @include font-title;
-  font-size: 32px;
+  font-size: 48px;
   text-align: center;
   padding: 16px;
 }
+
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
@@ -43,4 +52,17 @@
   border-radius: 18px;
   border: 1px solid #cfcece;
   @include font-type;
+}
+.wrapper {
+  position: relative;
+  .slot {
+    position: absolute;
+    top: 19px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    left: 0;
+    @include font-type;
+    color: $black;
+  }
 }
