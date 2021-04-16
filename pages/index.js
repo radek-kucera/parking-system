@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 // ZDE BUDE LENDING PAGE
 
@@ -6,11 +7,15 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Parking system</title>
+        <title>Welcome | park.it</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main>
+        <Link href="/sign">
+          <button>Get started</button>
+        </Link>
+      </main>
     </div>
   );
 };

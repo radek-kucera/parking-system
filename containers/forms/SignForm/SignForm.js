@@ -1,0 +1,51 @@
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import Button from '../../../components/Button/Button';
+import Input from '../../../components/Input/Input';
+import cls from './SignForm.module.scss';
+import { URL_SIGN } from '../../../dotenv';
+import { useState } from 'react';
+
+const SignForm = () => {
+  const { register, handleSubmit } = useForm();
+  const [isBusy, setBusy] = useState(false);
+  const [isError, setError] = useState(false);
+
+  const onSubmit = async (form) => {
+    try {
+      setBusy(true);
+      setError(false);
+
+      const { data } = await axios.post(URL_SIGN, form);
+
+      if (!data.success) {
+        return setError(data.errors.reason);
+      }
+
+      const { success, ...tokens } = data;
+
+      console.log(tokens);
+    } catch (err) {
+      setError('Unexpected error!');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <section className={cls['sign-form']}>
+      <h1>Sign in</h1>
+
+      <form className={cls['sign-form-container']} onSubmit={handleSubmit(onSubmit)}>
+        <Input placeholder="Username" name="username" register={register} />
+        <Input placeholder="Password" name="password" type="password" register={register} />
+        <p>{isError || ''}</p>
+        <Button type="submit" isBusy={isBusy}>
+          Sign in
+        </Button>
+      </form>
+    </section>
+  );
+};
+
+export default SignForm;
