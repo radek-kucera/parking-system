@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.emoji-tab {
+  width: 25%;
+  background-color: $light;
+  border-radius: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: $black;
+  padding-bottom: 16px;
+
+  @include font-type-bolder;
+
+  h1 {
+    margin: 20px;
+  }
+}

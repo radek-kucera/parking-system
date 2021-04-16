@@ -17,6 +17,12 @@ $white: white;
   font-style: normal;
 }
 
+@mixin font-type-bolder {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 @mixin font-type-bold {
   font-family: source-sans-pro, sans-serif;
   font-weight: 700;
