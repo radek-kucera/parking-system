@@ -4,7 +4,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Button from '../Button/Button';
 
-const ReservationPopup = () => {
+const CongratulationsPopup = () => {
   return (
     <Popup trigger={<Button>Book</Button>} modal>
       {(close) => (
@@ -29,4 +29,4 @@ const ReservationPopup = () => {
   );
 };
 
-export default ReservationPopup;
+export default CongratulationsPopup;
