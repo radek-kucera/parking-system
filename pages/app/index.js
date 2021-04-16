@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import AuthProvider from '../../containers/providers/AuthProvider/AuthProvider';
+import SpotInfo from '../../components/SpotInfo/SpotInfo';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <AuthProvider>
         <main>
           <h1>Appka lol :)</h1>
+          <SpotInfo></SpotInfo>
         </main>
       </AuthProvider>
     </div>
