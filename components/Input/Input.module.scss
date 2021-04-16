@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+
+.input {
+  position: relative;
+  margin-bottom: 16px;
+  .type {
+    @include font-type;
+    font-size: 18px;
+    padding: 16px;
+    -webkit-appearance: none;
+    display: block;
+    color: $black;
+    width: 380px;
+    border-radius: 3px;
+    border: 1px solid $lightgray;
+    margin: 1px;
+    transition: all 250ms ease;
+    @media only screen and (max-width: 768px) {
+      width: 280px;
+    }
+    &:focus {
+      outline: none;
+      border: 2px solid $main;
+      margin: 0px;
+    }
+    &.filled {
+      outline: none;
+      border: 2px solid $main;
+      margin: 0px;
+    }
+  }
+  .container {
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .label {
+    color: $lightgray;
+    font-size: 16px;
+    position: absolute;
+    pointer-events: none;
+    left: 16px;
+    top: 19px;
+    transition: all 250ms ease;
+
+    @include font-type;
+  }
+  .type:focus ~ .label,
+  .type.used ~ .label {
+    top: -12px;
+    transform: scale(0.75);
+    left: -2px;
+    color: $dark;
+    background-color: $white;
+    padding: 5px;
+  }
+}

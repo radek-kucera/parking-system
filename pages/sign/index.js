@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Copyright from '../../components/Copyright/Copyright';
 import SignForm from '../../containers/forms/SignForm/SignForm';
+import cls from './index.module.scss';
 import useUser from '../../hooks/useUser';
 
 const Sign = () => {
@@ -14,12 +15,12 @@ const Sign = () => {
   }, [user]);
 
   return (
-    <div>
+    <div className={cls['body']}>
       <Head>
         <title>Sign in | park.it</title>
       </Head>
 
-      <main>
+      <main className={cls['main']}>
         <SignForm />
         <Copyright />
       </main>

@@ -1,12 +1,19 @@
+@import '../../../styles/variables';
+
 .sign-form {
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  margin-top: 10vh;
+  background-color: $white;
   .sign-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .error {
+      color: lightcoral;
+      @include font-type;
+    }
   }
 }

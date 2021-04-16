@@ -1,0 +1,24 @@
+$main: #0076f9;
+$dark: #0059d3;
+$black: #484848;
+$lightgray: #c0c0c0;
+$light: #f8f8f8;
+$white: white;
+
+@mixin font-title {
+  font-family: foco, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin font-type {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-type-bold {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
