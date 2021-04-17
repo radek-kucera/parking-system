@@ -6,7 +6,7 @@ const About = () => {
   const router = useRouter();
 
   return (
-    <section className={cls['about']}>
+    <section className={cls['about']} id="#about">
       <h1>Reservation parking system for the future of mobility</h1>
       <p>
         Easily manage your parking space in your building. Permanent slots for managers, temporary for employees and

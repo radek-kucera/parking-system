@@ -1,13 +1,9 @@
-import { useRouter } from 'next/router';
-import Button from '../../components/Button/Button';
 import cls from './Footer.module.scss';
 import Link from 'next/link';
 
 const Footer = () => {
-  const router = useRouter();
-
   return (
-    <footer className={cls['footer']}>
+    <footer className={cls['footer']} id="#contact">
       <div className={cls['container']}>
         <div className={cls['nav-links']}>
           <Link href="#about">About</Link>
@@ -15,7 +11,7 @@ const Footer = () => {
           <Link href="#about">Contact</Link>
         </div>
         <div className={cls['copybar']}>
-          <p>Copyright © park.it 2021</p>
+          <p>Copyright © park.it {new Date().getFullYear()}</p>
           <span>
             Designed by<img src="/dreamind.svg"></img>
           </span>

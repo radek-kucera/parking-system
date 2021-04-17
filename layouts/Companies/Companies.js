@@ -6,7 +6,7 @@ const Companies = () => {
   const router = useRouter();
 
   return (
-    <section className={cls['companies']}>
+    <section className={cls['companies']} id="#partners">
       <h1>
         Join <b>150+ companies</b> in <b>20 countries</b> using park.it to easily manage their parking spots.
       </h1>

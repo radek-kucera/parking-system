@@ -10,3 +10,4 @@ export const URL_PARKING_SPOTS =
 export const URL_SENSORS = 'https://www.flexibee.eu/parking/proxy.php?file=parking3';
 export const URL_EVENTS_FULL =
   'https://rezervace.flexibee.eu/v2/c/rezervace3/udalost.json?detail=custom:typAkt,zodpPrac(kod,jmeno,prijmeni,email),zahajeni,dokonceni,predmet,zakazka(kod,nazev,zodpPrac),volno&includes=/udalost/zakazka,/udalost/zodpPrac';
+export const URL_EMAIL_CANCEL = 'http://85.163.88.64:3000/api/v420/send_canceled';
