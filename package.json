@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "date-fns": "^2.21.1",
     "next": "10.x",
     "react": "17.x",
+    "react-countdown": "^2.3.1",
     "react-dom": "17.x",
     "react-hook-form": "^7.1.1",
     "react-redux": "^7.2.3",
