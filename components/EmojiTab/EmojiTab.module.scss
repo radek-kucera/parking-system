@@ -3,7 +3,7 @@
 .emoji-tab {
   width: 25%;
   background-color: $light;
-  border-radius: 8%;
+  border-radius: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,10 +11,15 @@
   flex-direction: column;
   color: $black;
   padding-bottom: 16px;
+  margin-bottom: 16px;
 
   @include font-type-bolder;
 
   h1 {
     margin: 20px;
+  }
+
+  @media screen and (max-width: 528px) {
+    width: 90%;
   }
 }

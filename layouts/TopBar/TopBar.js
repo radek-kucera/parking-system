@@ -18,7 +18,7 @@ const TopBar = () => {
         <Link href="#about">Contact</Link>
       </div>
 
-      <Button onClick={() => router.push('/app')}>Get started</Button>
+      <Button onClick={() => router.push('/sign')}>Get started</Button>
     </nav>
   );
 };
