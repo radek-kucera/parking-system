@@ -9,7 +9,9 @@ const CarSpots = ({ userReservations, className = '', isBusy, ...props }) => {
   const currentReservation = events && user ? getCurrentReservation(user.kod) : null;
 
   const spotInfos = userReservations
-    ? userReservations.map((res) => <SpotInfo hasReservation={true} reservationInfo={res} />)
+    ? userReservations
+        .filter((res) => res.id !== currentReservation.id)
+        .map((res) => <SpotInfo hasReservation={true} reservationInfo={res} />)
     : null;
 
   return (
