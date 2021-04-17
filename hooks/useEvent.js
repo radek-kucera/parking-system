@@ -6,7 +6,7 @@ import { authorizedGet, authorizedPost, authorizedPut, authorizedDelete } from '
 
 const useEvent = () => {
   const [isBusy, setBusy] = useState(false);
-  const { data, error, revalidate } = useSWR(`${URL_EVENTS}.json?limit=0`, authorizedGet);
+  const { data, error, revalidate } = useSWR(`${URL_EVENTS_FULL}&limit=0`, authorizedGet);
 
   const create = async (event) => {
     try {
@@ -50,7 +50,7 @@ const useEvent = () => {
   const getCurrentReservation = (userCode) => {
     return data.data.winstrom.udalost.filter((e) => {
       return (
-        new Date(e.dokonceni) > new Date() && new Date(e.zahajeni) < new Date() && e.zodpPrac == `code:${userCode}`
+        new Date(e.dokonceni) > new Date() && new Date(e.zahajeni) < new Date() && e['zodpPrac@showAs'] == userCode
       );
     })[0];
   };
@@ -63,7 +63,7 @@ const useEvent = () => {
 
   const getUserReservations = (userCode) => {
     return data.data.winstrom.udalost.filter((e) => {
-      return new Date(e.dokonceni).getDate() >= new Date().getDate() && e.zodpPrac == `code:${userCode}`;
+      return new Date(e.dokonceni).getDate() >= new Date().getDate() && e['zodpPrac@showAs'] == userCode;
     });
   };
 

@@ -11,7 +11,7 @@ const SpotInfoReserved = ({ reservationInfo, isCurrent, className = '', isBusy, 
 
   return (
     <div className={cls['card']}>
-      <h2 className={cls['heading']}>{isCurrent ? 'Current reservation' : ''}</h2>
+      <h2 className={cls['heading']}>{isCurrent ? 'Current reservation' : reservationInfo.zakazka[0].kod}</h2>
       <div className={cls['wrapper']}>
         <div className={cls['img-wrapper']}>
           <img src={isCurrent ? '/car_red.svg' : '/car_green.svg'}></img>
