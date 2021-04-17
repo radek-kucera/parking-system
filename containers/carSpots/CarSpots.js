@@ -8,10 +8,13 @@ const CarSpots = ({ userReservations, className = '', isBusy, ...props }) => {
   const { user } = useUser();
   const currentReservation = events && user ? getCurrentReservation(user.kod) : null;
 
-  const spotInfos = userReservations
-    ? userReservations
-        .filter((res) => res.id !== currentReservation.id)
-        .map((res) => <SpotInfo hasReservation={true} reservationInfo={res} />)
+  const spotInfos =
+    userReservations && currentReservation
+      ? userReservations.filter((res) => res.id !== currentReservation.id)
+      : userReservations;
+
+  const spotInfoElements = spotInfos
+    ? spotInfos.map((res) => <SpotInfo hasReservation={true} reservationInfo={res} />)
     : null;
 
   return (
@@ -23,7 +26,7 @@ const CarSpots = ({ userReservations, className = '', isBusy, ...props }) => {
         ) : null}
       </div>
       <h2> Upcoming reservations </h2>
-      <div className={cls['parkingSpots']}>{spotInfos}</div>
+      <div className={cls['parkingSpots']}>{spotInfoElements}</div>
     </div>
   );
 };
