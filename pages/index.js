@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../layouts/Header/Header';
 import TopBar from '../layouts/TopBar/TopBar';
+import Companies from '../layouts/Companies/Companies';
+import About from '../layouts/About/About';
 
 // ZDE BUDE LENDING PAGE
 
@@ -15,6 +17,8 @@ const Home = () => {
 
       <TopBar />
       <Header />
+      <Companies />
+      <About />
     </div>
   );
 };
