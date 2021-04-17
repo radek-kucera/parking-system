@@ -18,11 +18,11 @@ const SpotInfoReserved = ({ reservationInfo, isCurrent, className = '', onCancel
 
   return (
     <div className={cls['card']}>
-      <h5 className={cls['heading']}>&nbsp;</h5>
+      <h3 className={cls['heading']}>{isCurrent ? 'Current reservation' : ''}&nbsp;</h3>
       <div className={cls['wrapper']}>
         <div className={cls['img-wrapper']}>
           <img src={isCurrent ? '/car_red.svg' : '/car_green.svg'}></img>
-          <span className={cls['slot']}>{isCurrent ? 'Current reservation' : reservationInfo.zakazka[0].kod}</span>
+          <span className={cls['slot']}>{isCurrent ? `` : reservationInfo.zakazka[0].kod}</span>
         </div>
         {isCurrent ? (
           <Countdown date={new Date(reservationInfo.dokonceni)} renderer={countdownClockRenderer} />
