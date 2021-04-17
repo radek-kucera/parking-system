@@ -7,7 +7,7 @@ import useEvent from '../../hooks/useEvent';
 import useUser from '../../hooks/useUser';
 import { useState } from 'react';
 
-const ReservationPopup = () => {
+const ReservationPopup = ({ text }) => {
   const [isBusy, setBusy] = useState(false);
   const [isError, setError] = useState(false);
   const [fromTime, setFromTime] = useState('');
@@ -58,7 +58,7 @@ const ReservationPopup = () => {
   };
 
   return (
-    <Popup trigger={<Button>Book</Button>} modal>
+    <Popup trigger={<Button>{text}</Button>} modal>
       {(close) => {
         if (!isBusy) {
           return (
