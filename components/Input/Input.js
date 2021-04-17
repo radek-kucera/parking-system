@@ -3,7 +3,14 @@ import cls from './Input.module.scss';
 const Input = ({ register, className = '', name, placeholder, ...props }) => {
   return (
     <div className={`${cls['input']} ${className}`}>
-      <input name={name} className={`${cls['type']} ${className}`} {...props} spellCheck="false" {...register(name)} />
+      <input
+        name={name}
+        className={`${cls['type']} ${className}`}
+        {...props}
+        spellCheck="false"
+        {...register(name)}
+        required
+      />
       <label className={`${cls['label']} ${className}`}>{placeholder}</label>
     </div>
   );
