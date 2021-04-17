@@ -13,7 +13,6 @@ import useUser from '../../../hooks/useUser';
 
 const ReservationForm = ({ onReserve }) => {
   const events = useEvent();
-  const parkingSpots = useParkingSpots();
   const user = useUser();
   const [isBusy, setBusy] = useState(false);
   const [isReserver, setReserved] = useState(false);
@@ -28,9 +27,11 @@ const ReservationForm = ({ onReserve }) => {
     setValues({ ...values, [name]: new Date(value) });
   };
 
-  const freeSpot = parkingSpots.getFreeSpot();
-
   const handleReserve = async (value) => {
+    const freeSpot = events.getFreeSpot(new Date(value.timeFrom), new Date(value.timeTo));
+
+    console.log(freeSpot);
+
     await events.create({
       winstrom: {
         udalost: [

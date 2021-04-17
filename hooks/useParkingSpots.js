@@ -7,12 +7,7 @@ const useParkingSpots = () => {
   const parkings = useSWR(URL_PARKING_SPOTS, authorizedGet);
   const sensors = useSWR(URL_SENSORS, unauthorizedGet);
 
-  const getFreeSpot = () => {
-    return '101';
-  };
-
   return {
-    getFreeSpot,
     isErrorParkings: !!parkings.error,
     isErrorSensors: !!sensors.error,
     parkingSpots: parkings.data ? parkings.data.data.winstrom.zakazka : null,

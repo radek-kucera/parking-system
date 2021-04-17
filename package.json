@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "date-fns": "^2.21.1",
+    "linq": "^3.2.3",
     "moment": "^2.29.1",
     "next": "10.x",
     "rc-time-picker": "^3.7.3",
