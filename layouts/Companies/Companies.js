@@ -6,7 +6,7 @@ const Companies = () => {
   const router = useRouter();
 
   return (
-    <header className={cls['companies']}>
+    <section className={cls['companies']}>
       <h1>
         Join <b>150+ companies</b> in <b>20 countries</b> using park.it to easily manage their parking spots.
       </h1>
@@ -20,7 +20,7 @@ const Companies = () => {
         </div>
       </div>
       <Button onClick={() => router.push('/sign')}>Contact</Button>
-    </header>
+    </section>
   );
 };
 
