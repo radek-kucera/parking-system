@@ -1,7 +1,11 @@
 import cls from './SpotInfo.module.scss';
 import ReservationPopup from '../ReservationPopup/ReservationPopup';
+import SpotInfoReserved from '../SpotInfoReserved/SpotInfoReserved';
 
-const SpotInfo = ({ children, className = '', isBusy, ...props }) => {
+const SpotInfo = ({ hasReservation, className = '', isBusy, ...props }) => {
+  if (hasReservation) {
+    return <SpotInfoReserved />;
+  }
   return (
     <div className={cls['card']}>
       <h2 className={cls['heading']}>New reservation</h2>

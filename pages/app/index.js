@@ -1,13 +1,18 @@
 import Head from 'next/head';
 import AuthProvider from '../../containers/providers/AuthProvider/AuthProvider';
 import SpotInfo from '../../components/SpotInfo/SpotInfo';
-import SpotInfo2 from '../../components/SpotInfo2/SpotInfo2';
 import { userRoles } from '../../constants/userRoles';
 import AccessProvider from '../../containers/providers/AccessProvider/AccessProvider';
 import useParkingSpots from '../../hooks/useParkingSpots';
+import useEvent from '../../hooks/useEvent';
+import useUser from '../../hooks/useUser';
 
 const App = () => {
-  const { sensorsData } = useParkingSpots();
+  const { userHasReservation, events } = useEvent();
+  const { user } = useUser();
+
+  const isReserved = user && events ? userHasReservation(user.kod) : null;
+
   return (
     <div>
       <Head>
@@ -17,11 +22,9 @@ const App = () => {
       <AuthProvider>
         <main>
           <h1>Appka lol :)</h1>
-          <button onClick={console.log(sensorsData)} />
-          <AccessProvider deny={[userRoles.user]}>
-            <SpotInfo></SpotInfo>
+          <AccessProvider deny={[userRoles.admin]}>
+            <SpotInfo hasReservation={isReserved} />
           </AccessProvider>
-          <SpotInfo2></SpotInfo2>
         </main>
       </AuthProvider>
     </div>
