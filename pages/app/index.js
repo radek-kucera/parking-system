@@ -23,6 +23,7 @@ const App = () => {
         <main>
           <h1>Appka lol :)</h1>
           <AccessProvider deny={[userRoles.admin]}>
+            <SpotInfo />
             <SpotInfo hasReservation={isReserved} />
           </AccessProvider>
         </main>

@@ -1,5 +1,5 @@
+import Button from '../Button/Button';
 import cls from './SpotInfoReserved.module.scss';
-import ReservationPopup from '../ReservationPopup/ReservationPopup';
 
 const SpotInfoReserved = ({ className = '', isBusy, ...props }) => {
   return (
@@ -15,7 +15,7 @@ const SpotInfoReserved = ({ className = '', isBusy, ...props }) => {
         <br></br>
         <span className={cls['date']}>7:30 am - 8:30 am</span>
         <div className={cls['button']}>
-          <ReservationPopup></ReservationPopup>
+          <Button>Cancel</Button>
         </div>
       </div>
     </div>
