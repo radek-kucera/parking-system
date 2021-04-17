@@ -1,9 +1,11 @@
-@import '../../styles/variables';
+@import '../../../styles/variables';
 .modal {
   font-size: 12px;
   background-color: $light;
   border-radius: 15px;
   padding: 16px 32px 32px 32px;
+  width: 60vw;
+  margin-left: -5vw;
   @include font-type;
 }
 .modal > .header {
@@ -36,7 +38,7 @@
   display: block;
   padding: 2px 11px;
   line-height: 30px;
-  right: -14px;
+  right: calc(-5vw + 14px);
   top: -14px;
   font-size: 24px;
   background: $light;

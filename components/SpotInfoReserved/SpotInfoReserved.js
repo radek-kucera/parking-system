@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import cls from './SpotInfoReserved.module.scss';
 import { format } from 'date-fns';
 import ReservationPopup from '../ReservationPopup/ReservationPopup';
@@ -31,6 +32,7 @@ const SpotInfoReserved = ({ reservationInfo, isCurrent, className = '', isBusy, 
         )}
 
         <div className={cls['button']}>
+          <Button>Cancel</Button>
           <ReservationPopup text={isCurrent ? 'Cancel' : 'Edit'}></ReservationPopup>
         </div>
       </div>
