@@ -7,9 +7,14 @@ import moment from 'moment';
 
 import cls from './ReservationForm.module.scss';
 import Button from '../../../components/Button/Button';
+import useEvent from '../../../hooks/useEvent';
+import useParkingSpots from '../../../hooks/useParkingSpots';
 import useUser from '../../../hooks/useUser';
 
 const ReservationForm = ({ onReserve }) => {
+  const events = useEvent();
+  const parkingSpots = useParkingSpots();
+  const user = useUser();
   const [isBusy, setBusy] = useState(false);
   const [isReserver, setReserved] = useState(false);
   const [isError, setError] = useState(null);
@@ -23,8 +28,26 @@ const ReservationForm = ({ onReserve }) => {
     setValues({ ...values, [name]: new Date(value) });
   };
 
+  const freeSpot = parkingSpots.getFreeSpot();
+
   const handleReserve = async (value) => {
-    // TODO SEND REQUEST TO API WITH VALUES
+    await events.create({
+      winstrom: {
+        udalost: [
+          {
+            typAkt: 'code:UDÁLOST',
+            zodpPrac: `code:${user.user.kod}`,
+            zahajeni: new Date(value.timeFrom.setHours(value.timeFrom.getHours() + 2)),
+            dokonceni: new Date(value.timeTo.setHours(value.timeTo.getHours() + 2)),
+            predmet: '',
+            zakazka: `code:${freeSpot}`,
+            volno: false
+          }
+        ]
+      }
+    });
+
+    events.revalidate();
 
     onReserve(value);
   };

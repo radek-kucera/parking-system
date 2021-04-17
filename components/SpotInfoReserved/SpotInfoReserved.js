@@ -10,7 +10,7 @@ const SpotInfoReserved = ({ reservationInfo, isCurrent, className = '', isBusy, 
 
   const countdownClockRenderer = ({ hours, minutes, seconds }) => {
     if (hours === 0 && minutes === 0 && seconds === 0) {
-      remove(reservationInfo.id);
+      //to delete ...
     }
 
     return <CountdownClock hours={hours} minutes={minutes} seconds={seconds} />;
