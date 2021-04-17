@@ -1,7 +1,7 @@
-import cls from './SpotInfo2.module.scss';
+import cls from './SpotInfoReserved.module.scss';
 import ReservationPopup from '../ReservationPopup/ReservationPopup';
 
-const SpotInfo = ({ children, className = '', isBusy, ...props }) => {
+const SpotInfoReserved = ({ className = '', isBusy, ...props }) => {
   return (
     <div className={cls['card']}>
       <h2 className={cls['heading']}>Next reservation</h2>
@@ -22,4 +22,4 @@ const SpotInfo = ({ children, className = '', isBusy, ...props }) => {
   );
 };
 
-export default SpotInfo;
+export default SpotInfoReserved;

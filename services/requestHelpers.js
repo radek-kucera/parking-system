@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+export const unauthorizedGet = async (url) => {
+  return axios.get(url, {
+    headers: { 'Content-Type': 'application/json' }
+  });
+};
+
 export const authorizedGet = async (url) => {
   const tokens = JSON.parse(localStorage.getItem('auth'));
 

@@ -48,16 +48,29 @@ const useEvent = () => {
   };
 
   const getUpcomingEvents = () => {
-    data.data.winstrom.udalost.filter((e) => {
+    return data.data.winstrom.udalost.filter((e) => {
       return new Date(e.dokonceni).getDate() > new Date().getDate();
     });
   };
 
+  const getUserReservations = (userCode) => {
+    return data.data.winstrom.udalost.filter((e) => {
+      return new Date(e.dokonceni).getDate() > new Date().getDate() && e.zodpPrac == `code:${userCode}`;
+    });
+  };
+
+  const userHasReservation = (userCode) => {
+    return getUserReservations(userCode).length > 0;
+  };
+
   return {
+    isBusy,
     create,
     update,
     remove,
     getUpcomingEvents,
+    getUserReservations,
+    userHasReservation,
     isError: !!error,
     events: data ? data.data.winstrom.udalost : null,
     revalidate
