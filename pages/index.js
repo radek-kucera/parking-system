@@ -4,6 +4,7 @@ import Header from '../layouts/Header/Header';
 import TopBar from '../layouts/TopBar/TopBar';
 import Companies from '../layouts/Companies/Companies';
 import About from '../layouts/About/About';
+import Footer from '../layouts/Footer/Footer';
 
 // ZDE BUDE LENDING PAGE
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Header />
       <Companies />
       <About />
+      <Footer />
     </div>
   );
 };

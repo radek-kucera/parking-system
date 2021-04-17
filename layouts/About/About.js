@@ -6,7 +6,7 @@ const About = () => {
   const router = useRouter();
 
   return (
-    <header className={cls['about']}>
+    <section className={cls['about']}>
       <h1>Reservation parking system for the future of mobility</h1>
       <p>
         Easily manage your parking space in your building. Permanent slots for managers, temporary for employees and
@@ -15,7 +15,7 @@ const About = () => {
       </p>
       <img src="/parking_car.svg"></img>
       <Button onClick={() => router.push('/sign')}>Get started</Button>
-    </header>
+    </section>
   );
 };
 
