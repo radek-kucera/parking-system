@@ -23,8 +23,6 @@ const App = () => {
       <AuthProvider>
         <main>
           <AccessProvider deny={[userRoles.admin]}>
-            <SpotInfo />
-            <SpotInfo hasReservation={isReserved} />
             <CarSpots userReservations={reservations} />
           </AccessProvider>
         </main>

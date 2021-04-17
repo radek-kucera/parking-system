@@ -1,7 +1,6 @@
 import Button from '../Button/Button';
 import cls from './SpotInfoReserved.module.scss';
 import { format } from 'date-fns';
-import ReservationPopup from '../ReservationPopup/ReservationPopup';
 import Countdown from 'react-countdown';
 import CountdownClock from '../../renderers/CountdownClock/CountdownClock';
 import useEvent from '../../hooks/useEvent';
@@ -40,7 +39,6 @@ const SpotInfoReserved = ({ reservationInfo, isCurrent, className = '', isBusy, 
 
         <div className={cls['button']}>
           <Button>Cancel</Button>
-          <ReservationPopup text={isCurrent ? 'Cancel' : 'Edit'}></ReservationPopup>
         </div>
       </div>
     </div>
