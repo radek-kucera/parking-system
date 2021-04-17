@@ -6,12 +6,13 @@ import AccessProvider from '../../containers/providers/AccessProvider/AccessProv
 import useParkingSpots from '../../hooks/useParkingSpots';
 import useEvent from '../../hooks/useEvent';
 import useUser from '../../hooks/useUser';
+import CarSpots from '../../containers/carSpots/CarSpots';
 
 const App = () => {
-  const { userHasReservation, events } = useEvent();
+  const { events, getUserReservations } = useEvent();
   const { user } = useUser();
 
-  const isReserved = user && events ? userHasReservation(user.kod) : null;
+  const reservations = user && events ? getUserReservations(user.kod) : null;
 
   return (
     <div>
@@ -21,10 +22,10 @@ const App = () => {
 
       <AuthProvider>
         <main>
-          <h1>Appka lol :)</h1>
           <AccessProvider deny={[userRoles.admin]}>
             <SpotInfo />
             <SpotInfo hasReservation={isReserved} />
+            <CarSpots userReservations={reservations} />
           </AccessProvider>
         </main>
       </AuthProvider>

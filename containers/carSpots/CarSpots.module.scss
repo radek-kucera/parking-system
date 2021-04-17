@@ -1,0 +1,11 @@
+.topWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  text-align: center;
+}
+.parkingSpots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

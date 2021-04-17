@@ -2,9 +2,10 @@ import cls from './SpotInfo.module.scss';
 import SpotInfoReserved from '../SpotInfoReserved/SpotInfoReserved';
 import ReservationPopup from '../../containers/modals/ReservationPopup/ReservationPopup';
 
-const SpotInfo = ({ hasReservation, className = '', isBusy, ...props }) => {
+const SpotInfo = ({ hasReservation, isCurrent, reservationInfo, className = '', isBusy, ...props }) => {
   if (hasReservation) {
-    return <SpotInfoReserved />;
+    console.log(reservationInfo);
+    return <SpotInfoReserved reservationInfo={reservationInfo} isCurrent={isCurrent} />;
   }
 
   return (
